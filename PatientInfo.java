@@ -6,26 +6,26 @@ public class PatientInfo {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
             Connection connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "bhagiradhija", " ");
+                    "jdbc:oracle:thin:@localhost:1521:xe", "tharun", " ");
 
             Statement statement = connection.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT patient_id, name, problem, bill FROM patients");
+            ResultSet rs = statement.executeQuery("SELECT patient_id, name, problem, bill FROM patients");
 
             while (resultSet.next()) {
-                int patientId = resultSet.getInt("patient_id");
+                int Id = resultSet.getInt("patientid");
                 String name = resultSet.getString("name");
                 String problem = resultSet.getString("problem");
                 double bill = resultSet.getDouble("bill");
 
-                System.out.println("Patient ID: " + patientId);
+                System.out.println("Patient ID: " + Id);
                 System.out.println("Name: " + name);
                 System.out.println("Problem: " + problem);
                 System.out.println("Bill: " + bill);
                 System.out.println();
             }
 
-            resultSet.close();
+            rs.close();
             statement.close();
             connection.close();
 
