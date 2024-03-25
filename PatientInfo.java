@@ -6,7 +6,7 @@ public class PatientInfo {
             Class.forName("oracle.jdbc.driver.OracleDriver");
 
             Connection connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "tharun", " ");
+                    "jdbc:oracle:thin:@localhost:1521:xe", "siva", " ");
 
             Statement statement = connection.createStatement();
 
