@@ -12,11 +12,11 @@ public class PatientInfo {
 
             ResultSet rs = statement.executeQuery("SELECT patient_id, name, problem, bill FROM patients");
 
-            while (resultSet.next()) {
-                int Id = resultSet.getInt("patientid");
-                String name = resultSet.getString("name");
-                String problem = resultSet.getString("problem");
-                double bill = resultSet.getDouble("bill");
+            while (rs.next()) {
+                int Id = rs.getInt("patientid");
+                String name = rs.getString("name");
+                String problem = rs.getString("problem");
+                double bill = rs.getDouble("bill");
 
                 System.out.println("Patient ID: " + Id);
                 System.out.println("Name: " + name);
