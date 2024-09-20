@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <style>
+            .bg-image {                
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .tog-pad {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+            }
+
+            .para {
+                margin: 0 10px;
+            }
+
+            .tog {
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
+            }
+
+            .switch {
+                position: absolute;
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked + .slider {
+                background-color: #2196F3;
+            }
+
+            input:focus + .slider {
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked + .slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+
+            .slider.round {
+                border-radius: 34px;
+            }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+            .marg {
+                margin-top: 100px;
+                text-align: center;
+            }
+
+            .main-head {
+                font-size: 48px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .sp {
+                color: #2196F3;
+            }
+
+            .mainpara {
+                font-size: 24px;
+                margin-bottom: 50px;
+            }
+
+            .cont {
+                padding: 50px 0;
+            }
+
+            .profile-head {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .profilepara {
+                font-size: 18px;
+                border: 1px solid black;
+                padding: 20px;
+            }
+
+            .skill-head {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .skillset {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px;
+            }
+
+            .skill {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px;
+            }
+
+            .skill i {
+                font-size: 48px;
+                margin-bottom: 10px;
+            }
+
+            .skill p {
+                font-size: 18px;
+            }
+
+            .proj-head {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .card-container {
+                border: 1px solid black;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .card-image {
+                height: 200px;
+                object-fit: cover;
+            }
+
+            .card-head {
+                font-size: 24px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active" href="#SectionHome">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#sectionprojects">Projects</a>
+                    <a class="nav-link" href="#sectioncontact">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <div id="SectionHome">
+            <div id="bgimg" class="bg-image" style="background-image: url(&quot;https://images.unsplash.com/photo-1518655048521-f130df041f66?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&quot;);">
+                <div class="tog-pad d-flex flex-row">
+                    <p id="lpara" class="para" style="color: black;">Light</p>
+                    <div class="tog">
+                        <label class="switch">
+                            <input type="checkbox" id="toggleSwitch">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <p id="dpara" class="para" style="color: black;">Dark</p>
+                </div>
+                <div class="marg">
+                    <h1 id="mainhead" class="main-head" style="color: black;">
+                        Portofolio of<br><span class="sp">Manikanta Jana</span>
+                    </h1>
+                    <p class="mainpara" id="mainpara" style="color: black;">A Freelance Web developer.</p>
+                </div>
+            </div>
+    
+    
+            <div id="cont" class="container-fluid cont" style="background-color: white;">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 id="profilehead" class="profile-head" style="color: black;">-Profile-</h1>
+    
+                        <p id="profilepara" class="profilepara" style="color: black; border-color: black;">Passionate Frontend &amp; Fullstack Developer with a strong background in HTML, CSS, and Javascript, and also Skilled in
+                            Python, SQL and Git. Good in problem-solving, research, and collaboration abilities. Seeking a challenging role to develop
+                            cutting-edge AI solutions.
+                        </p>
+    
+                        <h1 id="skillhead" class="skill-head" style="color: black;">-SkillSet-</h1>
+                        <div>
+                            <div id="skillset" class="skillset mt-5 ml-4 mr-4" style="background-color: black;">
+                                <div class="skill">
+                                    <i id="skill1i" class="fab fa-html5" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill1p" style="color: white;">HTML</p>
+                                </div>
+                                <div class="skill">
+                                    <i id="skill2i" class="fab fa-css3-alt" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill2p" style="color: white;">CSS</p>
+                                </div>
+                                <div class="skill">
+                                    <i id="skill3i" class="fab fa-js" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill3p" style="color: white;">JavaScript</p>
+                                </div>
+                                <div class="skill">
+                                    <i id="skill4i" class="fab fa-python" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill4p" style="color: white;">Python</p>
+                                </div>
+                                <div class="skill">
+                                    <i id="skill5i" class="fas fa-database" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill5p" style="color: white;">SQL</p>
+                                </div>
+                                <div class="skill">
+                                    <i id="skill6i" class="fab fa-git-alt" aria-hidden="true" style="color: white;"></i>
+                                    <p id="skill6p" style="color: white;">Git</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div id="sectionprojects">
+            <div id="contpro" class="container-fluid cont p-5" style="background-color: white;">
+                <div class="row">
+                    <div class="col-12 p-5">
+                        <h1 id="projhead" class="proj-head" style="color: black;">-Projects-</h1>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://manikantajana.ccbp.tech/">
+                            <div id="cardcont" class="card-container shadow" style="border-color: black;">
+                                <img src="https://wallpapers.com/images/featured/travel-ibk7fgrvtvhs7qzg.jpg" class="card-image w-100">
+                                <h1 id="cardhead" class="card-head text-center">Tourism Website | Static Website</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://mjrestaurent.ccbp.tech/">
+                            <div id="cardcont" class="card-container mb-3 shadow">
+                                <img src="https://img.freepik.com/premium-photo/tray-food-including-variety-food-including-food_1316263-20385.jpg?w=2000" class="card-image w-100">
+                                <h1 id="cardhead" class="card-head text-center">Restaurent Website | Responsive Website</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://netflixcloneweb.ccbp.tech/">
+                            <div id="cardcont" class="card-container mb-3 shadow">
+                                <img src="https://pixelz.cc/wp-content/uploads/2017/11/netflix-logo-uhd-8k-wallpaper.jpg" class="card-image w-100">
+                                <h1 id="cardhead" class="card-head text-center">Netflix Clone Website</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://hackndemo.ccbp.tech/">
+                            <div id="cardcont" class="card-container mb-3 shadow">
+                                <img src="https://4kwallpapers.com/images/wallpapers/google-logo-5k-8k-3840x2160-11298.png" class="card-image w-100">
+                                <h1 id="cardhead" class="card-head text-center">Google Login Credintial Hacking Website</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://gogagaproject.ccbp.tech/">
+                            <div id="cardcont" class="card-container mb-3 shadow">
+                                <img src="https://previewimagedata.s3.ap-south-1.amazonaws.com/companies/gogagaholidays-in.png" class="card-image w-100">
+                                <h1 id="cardhead" class="card-head text-center">Website developed for a company called Gogaga Holiday</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-4 cont-pad">
+                        <a href="https://ssj.ccbp.tech/">
+                            <div id="cardcont" class="card-container mb-3 shadow">
+                                <img src="https://media.istockphoto.com/id/1276740597/photo/indian-traditional-gold-necklace.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=OYp1k0OVJObYq9hqVK_r6NwYa_W54km4nya1R-ovIUY=" class="card-image w-100">
+    
+                                <h1 id="cardhead" class="card-head text-center">A Jewellery Store Website<br>[Under Development]</h1>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 p-5">
+                        <h1 id="certhead" class="proj-head" style="color: black;">-Certificates-</h1>
+                        <div>
+                            <div id="skillset2" class="skillset2 text-center" style="background-color: black;">
+                                <p class="certpara" id="certpara" style="color: white;">-Visit the URL below to see my all Certificates!-</p>
+                                <a href="https://mycertifs.ccbp.tech/" class="certlink">https://mycertifs.ccbp.tech/</a>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <footer id="sectioncontact">
+            <p>Manikanta Jana</p>
+            <p><a href="mailto:janamanikanta369@gmail.com">janamanikanta369@gmail.com</a></p>
+            <div class="footer-icons">
+                <a href="https://www.instagram.com/_themj____" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://wa.me/9154750397" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://github.com/manikantajana" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+
+</html>
